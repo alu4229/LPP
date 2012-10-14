@@ -1,0 +1,12 @@
+#! /usr/local/ruby/bin/ruby
+
+require 'rake'
+require 'rake/testtask'
+
+tak :test => [:test_units]
+
+desc "Tests"
+Rake::TestTask.new("test_units") { |t|
+  t.pattern = 'tc_*.rb'
+  t.verbose = true
+}
